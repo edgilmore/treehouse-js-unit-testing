@@ -1,15 +1,6 @@
-const {
-  expect
-} = require('chai');
-const {
-  describe,
-  beforeEach,
-  it
-} = require('mocha');
-const {
-  gatherNamesOf,
-  titleCase
-} = require('../utilities/utilities');
+const { expect } = require('chai');
+const { describe, beforeEach, it } = require('mocha');
+const { gatherNamesOf, titleCase } = require('../utilities/utilities');
 
 describe('gatherNamesOf', () => {
   let people;
@@ -17,15 +8,14 @@ describe('gatherNamesOf', () => {
 
   beforeEach(() => {
     people = [{
-        name: 'Günter'
-      },
-      {
-        name: 'Marceline'
-      },
-      {
-        name: 'Simon'
-      },
-    ];
+      name: 'Günter',
+    },
+    {
+      name: 'Marceline',
+    },
+    {
+      name: 'Simon',
+    }];
     names = gatherNamesOf(people);
   });
 
