@@ -1,4 +1,5 @@
-const expect = require("chai");
+const { expect } = require("chai");
+const { describe, it } = require("mocha");
 
 describe("checkForShip", () => {
   const { checkForShip } = require("../game/logic/ship_methods");
