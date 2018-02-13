@@ -4,19 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
+    "format": "prettier --write '**/*.{js,jsx}'",
+    "lint": "eslint '**/*.{js,jsx}' --quiet"
   },
   "author": "Ed Gilmore",
   "license": "MIT",
   "devDependencies": {
     "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-prettier": "^2.6.0",
     "prettier": "^1.10.2"
   },
   "dependencies": {
     "chai": "^4.1.2",
-    "eslint": "^4.15.0",
-    "mocha": "^4.1.0"
+    "eslint": "^4.17.0",
+    "mocha": "^5.0.0"
   }
 }
