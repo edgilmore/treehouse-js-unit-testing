@@ -1,9 +1,9 @@
-const { expect } = require("chai");
-const { describe, it } = require("mocha");
+const { expect } = require('chai');
+const { describe, it } = require('mocha');
+const { checkForShip } = require('../game/logic/ship_methods');
 
-describe("checkForShip", () => {
-  const { checkForShip } = require("../game/logic/ship_methods");
-  it("should correctly report no ship at a given players coordinate", () => {
+describe('checkForShip', () => {
+  it('should correctly report no ship at a given players coordinate', () => {
     expect(checkForShip(player, [9, 9]));
   });
 });

@@ -7,15 +7,17 @@ describe('gatherNamesOf', () => {
   let names;
 
   beforeEach(() => {
-    people = [{
-      name: 'Günter',
-    },
-    {
-      name: 'Marceline',
-    },
-    {
-      name: 'Simon',
-    }];
+    people = [
+      {
+        name: 'Günter',
+      },
+      {
+        name: 'Marceline',
+      },
+      {
+        name: 'Simon',
+      },
+    ];
     names = gatherNamesOf(people);
   });
 
