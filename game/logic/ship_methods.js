@@ -7,8 +7,9 @@ function checkForShip(player, coordinates) {
     shipPresent = ship.locations.filter(
       location => location[0] === coordinates[0] && location[1] === coordinates[1],
     );
+    if (shipPresent.length > 0) return true;
   }
-  return shipPresent.length !== 0;
+  return false;
 }
 
 module.exports.checkForShip = checkForShip;
