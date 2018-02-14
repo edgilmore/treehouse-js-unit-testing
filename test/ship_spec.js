@@ -35,5 +35,14 @@ describe('checkForShip', () => {
 });
 
 describe('damageShip', () => {
-
-})
+  let ship = {
+    locations: [[0, 0]],
+    damage: [],
+  };
+  it('should register damage on a given ship at a given location', () => {
+    ship = damageShip(ship, [0, 0]);
+    // eslint-disable-next-line
+    expect(ship.damage).to.not.be.empty;
+    expect(ship.damage).to.deep.include([0, 0]);
+  });
+});
