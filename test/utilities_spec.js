@@ -1,5 +1,5 @@
+/* eslint-env mocha */
 const { expect } = require('chai');
-const { describe, beforeEach, it } = require('mocha');
 const { gatherNamesOf, titleCase } = require('../utilities/utilities');
 
 describe('gatherNamesOf', () => {
