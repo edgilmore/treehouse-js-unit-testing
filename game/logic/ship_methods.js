@@ -12,4 +12,18 @@ function checkForShip(player, coordinates) {
   return false;
 }
 
+function damageShip(ship, coordinates) {
+  let damagedShip;
+  if (ship.locations.length > 0) {
+    damagedShip = ship.locations.filter(
+      location => location[0] === coordinates[0] && location[1] === coordinates[1],
+    );
+  }
+  if (damagedShip) {
+    ship.damage.push(coordinates);
+  }
+  return ship;
+}
+
 module.exports.checkForShip = checkForShip;
+module.exports.damageShip = damageShip;
