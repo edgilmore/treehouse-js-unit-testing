@@ -25,5 +25,20 @@ function damageShip(ship, coordinates) {
   return ship;
 }
 
+function fire(player, coordinates) {
+  const foundShip = checkForShip(player, coordinates);
+  if (foundShip) {
+    const shipMatch = player.ships.filter(ship =>
+      ship.locations.filter(
+        location => location[0] === coordinates[0] && location[1] === coordinates[1],
+      ),
+    );
+    if (shipMatch.length > 0) {
+      damageShip(shipMatch[0], coordinates);
+    }
+  }
+}
+
 module.exports.checkForShip = checkForShip;
 module.exports.damageShip = damageShip;
+module.exports.fire = fire;
