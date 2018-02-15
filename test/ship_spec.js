@@ -1,6 +1,6 @@
 /* eslint-env mocha */
 const { expect } = require('chai');
-const { checkForShip, damageShip } = require('../game/logic/ship_methods');
+const { checkForShip, damageShip, fire } = require('../game/logic/ship_methods');
 
 describe('checkForShip', () => {
   const player = {
@@ -44,5 +44,30 @@ describe('damageShip', () => {
     // eslint-disable-next-line
     expect(ship.damage).to.not.be.empty;
     expect(ship.damage).to.deep.include([0, 0]);
+  });
+});
+
+describe('fire', () => {
+  let player;
+  beforeEach(() => {
+    player = {
+      ships: [
+        {
+          id: 1,
+          locations: [[0, 0]],
+          damage: [],
+        },
+      ],
+    };
+  });
+
+  it('should record damage on the given players ship at a given coordinate', () => {
+    fire(player, [0, 0]);
+    expect(player.ships[0].damage[0]).to.deep.equal([0, 0]);
+  });
+  it('should not record damage if there is no ship at coordinates', () => {
+    fire(player, [0, 1]);
+    // eslint-disable-next-line
+    expect(player.ships[0].damage).to.be.empty;
   });
 });
