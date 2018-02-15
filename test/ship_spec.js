@@ -3,13 +3,17 @@ const { expect } = require('chai');
 const { checkForShip, damageShip, fire } = require('../game/logic/ship_methods');
 
 describe('checkForShip', () => {
-  const player = {
-    ships: [
-      { locations: [[0, 0], [0, 1], [9, 9]] },
-      { locations: [[0, 1], [0, 0], [1, 2]] },
-      { locations: [[0, 6], [1, 5], [9, 5]] },
-    ],
-  };
+  let player;
+  before(() => {
+    player = {
+      ships: [
+        { locations: [[0, 0], [0, 1], [9, 9]] },
+        { locations: [[0, 1], [0, 0], [1, 2]] },
+        { locations: [[0, 6], [1, 5], [9, 5]] },
+      ],
+    };
+  });
+
   it('should correctly report no ship at a given players coordinate', () => {
     // eslint-disable-next-line
     expect(checkForShip(player, [1, 1])).to.be.false;
