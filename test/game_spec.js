@@ -27,4 +27,19 @@ describe('GAME INSTANCE FUNCTIONS', () => {
     });
   });
   xit('some other stuff', () => {});
+
+  function saveGame(callback) {
+    setTimeout(() => {
+      callback();
+    }, 1000);
+  }
+
+  it('should update save status', done => {
+    let status = 'game not saved';
+    saveGame(() => {
+      status = 'game saved';
+    });
+    done();
+    expect(status).to.equal('game saved');
+  });
 });
