@@ -38,8 +38,8 @@ describe('GAME INSTANCE FUNCTIONS', () => {
     let status = 'game not saved';
     saveGame(() => {
       status = 'game saved';
+      expect(status).to.equal('game saved');
+      done();
     });
-    done();
-    expect(status).to.equal('game saved');
   });
 });
